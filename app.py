@@ -64,4 +64,4 @@ if uploaded_file is not None:
         st.success("🚀 Premium Tier: Process unlimited rows + Automated Excel formatting.")
         # Place your Lemon Squeezy or Paddle checkout link directly onto the button
         premium_checkout_url = "https://lemonsqueezy.com?..."
-        st.link_button("🔓 Unlock Unlimited Premium Processing ($9)", premium_checkout_url)
+        st.link_button("🔓 Unlock Unlimited Premium Processing ($5)", premium_checkout_url)

@@ -7,7 +7,7 @@ st.title("📊 Global CSV or Excel Data Sanitizer & Formatter")
 st.write("Upload any messy CSV or excel file to instantly clean duplicates, fix formatting, and sanitize strings.")
 
 # 2. File Uploading (Accepts global CSV formats)
-uploaded_file = st.file_uploader("Choose a CSV or Excel file to process", type=["csv"],["xlsx"],["xls"])
+uploaded_file = st.file_uploader("Choose a CSV or Excel file to process", type=["csv","xlsx","xls"])
 
 if uploaded_file is not None:
     # Read the data into a DataFrame (Your Web DataWindow)

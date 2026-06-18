@@ -3,11 +3,11 @@ import pandas as pd
 
 # 1. Page Configuration & UI Title
 st.set_page_config(page_title="Global Data Sanitizer", page_icon="📊", layout="wide")
-st.title("📊 Global CSV Data Sanitizer & Formatter")
-st.write("Upload any messy CSV file to instantly clean duplicates, fix formatting, and sanitize strings.")
+st.title("📊 Global CSV or Excel Data Sanitizer & Formatter")
+st.write("Upload any messy CSV or excel file to instantly clean duplicates, fix formatting, and sanitize strings.")
 
 # 2. File Uploading (Accepts global CSV formats)
-uploaded_file = st.file_uploader("Choose a CSV file to process", type=["csv"])
+uploaded_file = st.file_uploader("Choose a CSV or Excel file to process", type=["csv"],["xlsx"],["xls"])
 
 if uploaded_file is not None:
     # Read the data into a DataFrame (Your Web DataWindow)

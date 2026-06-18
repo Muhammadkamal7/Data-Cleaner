@@ -10,8 +10,16 @@ st.write("Upload any messy CSV or excel file to instantly clean duplicates, fix 
 uploaded_file = st.file_uploader("Choose a CSV or Excel file to process", type=["csv","xlsx","xls"])
 
 if uploaded_file is not None:
-    # Read the data into a DataFrame (Your Web DataWindow)
-    df = pd.read_csv(uploaded_file)
+    # Read the data into a DataFrame (handle CSV and Excel uploads)
+    try:
+        filename = uploaded_file.name
+        if filename.lower().endswith((".xlsx", ".xls")):
+            df = pd.read_excel(uploaded_file, engine="openpyxl")
+        else:
+            df = pd.read_csv(uploaded_file)
+    except Exception as e:
+        st.error(f"Error reading uploaded file: {e}")
+        st.stop()
     
     st.subheader("👀 Original Data Preview (First 5 Rows)")
     st.dataframe(df.head())
